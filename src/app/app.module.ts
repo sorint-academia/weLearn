@@ -8,7 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnitComponent } from './unit/unit.component';
 import { WidgetComponent } from './widget/widget.component';
-
+import { CoursesService } from  './courses.service';
+import { Slash2underscorePipe } from './slash2underscore.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WidgetComponent } from './widget/widget.component';
     LoginFormComponent,
     DashboardComponent,
     UnitComponent,
-    WidgetComponent
+    WidgetComponent,
+    Slash2underscorePipe
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,9 @@ import { WidgetComponent } from './widget/widget.component';
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [
+    CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
