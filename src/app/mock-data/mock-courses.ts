@@ -1,4 +1,4 @@
-import { Course } from "./course";
+import { Course } from "../entity/course";
 
 export const COURSES : Course[] = [
     { courseID: "/api/courses/b8cf2a9f-a469-4810-8bd6-0e5c78672f36",

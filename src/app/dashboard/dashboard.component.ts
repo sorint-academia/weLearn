@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../courses.service';
-import { Course } from '../course';
+import { CoursesService } from '../services/courses.service';
+import { Course } from '../entity/course';
 
 @Component({
   selector: 'app-dashboard',

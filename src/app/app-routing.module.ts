@@ -4,15 +4,13 @@ import { RouterModule, Routes } from '@angular/router'; // Aggiungo modulo di ro
 
 // ----------- COMPONENTI -----------
 import { DashboardComponent } from './dashboard/dashboard.component'; // Aggiungo component dashboard
-import { LoginFormComponent } from './login-form/login-form.component';
 import { UnitComponent } from './unit/unit.component';
 
 // ------------ ROUTES --------------
 const routes: Routes =  [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginFormComponent  },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'courses/:id/units/:id', component: UnitComponent},
-  { path: 'dashboard', component: DashboardComponent  }
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
