@@ -26,7 +26,7 @@ import { initializer } from './utils/app-init';
     KeycloakAngularModule
   ],
   providers: [
-    CoursesService,
+  CoursesService,
     { 
       provide: APP_INITIALIZER,
       useFactory: initializer,
