@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Widget } from '../entity/widget';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-unit',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitComponent implements OnInit {
 
-  constructor() { }
+  widgets: Widget[];
+
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit() {
   }

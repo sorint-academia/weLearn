@@ -10,6 +10,8 @@ import { CoursesService } from  './services/courses.service';
 import { Slash2underscorePipe } from './slash2underscore.pipe';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
+import { WidgetHtmlComponent } from './widget-html/widget-html.component';
+import { WidgetCodeComponent } from './widget-code/widget-code.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { initializer } from './utils/app-init';
     DashboardComponent,
     UnitComponent,
     WidgetComponent,
-    Slash2underscorePipe
+    Slash2underscorePipe,
+    WidgetHtmlComponent,
+    WidgetCodeComponent
   ],
   imports: [
     BrowserModule,
