@@ -24,6 +24,9 @@ module.exports = function (config) {
       environment: 'dev'
     },
     reporters: ['progress', 'junit'],
+    junitReporter: {
+      outputDir: 'build/reports',
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

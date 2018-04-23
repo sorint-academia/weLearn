@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // Aggiung
 import { UnitComponent } from './unit/unit.component';
 
 // ------------ ROUTES --------------
-const routes: Routes =  [
+export const routes: Routes =  [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'courses/:id/units/:id', component: UnitComponent},
   { path: 'dashboard', component: DashboardComponent }

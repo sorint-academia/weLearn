@@ -30,7 +30,7 @@ import { WidgetCodeComponent } from './widget-code/widget-code.component';
     KeycloakAngularModule
   ],
   providers: [
-    CoursesService,
+  CoursesService,
     { 
       provide: APP_INITIALIZER,
       useFactory: initializer,
