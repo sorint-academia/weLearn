@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Widget } from '../entity/widget';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-widget',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WidgetComponent implements OnInit {
 
+  @Input() widget: Widget;
+  
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
