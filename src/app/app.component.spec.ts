@@ -6,6 +6,8 @@ import { WidgetComponent } from "./widget/widget.component";
 import { UnitComponent } from "./unit/unit.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { Slash2underscorePipe } from "./slash2underscore.pipe";
+import { WidgetHtmlComponent } from "./widget-html/widget-html.component";
+import { WidgetCodeComponent } from "./widget-code/widget-code.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,7 +18,9 @@ describe('AppComponent', () => {
         WidgetComponent,
         UnitComponent,
         DashboardComponent,
-        Slash2underscorePipe
+        Slash2underscorePipe,
+        WidgetHtmlComponent,
+        WidgetCodeComponent
       ],
     }).compileComponents();
   }));
