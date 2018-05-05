@@ -13,6 +13,7 @@ import { initializer } from './utils/app-init';
 import { WidgetHtmlComponent } from './widget-html/widget-html.component';
 import { WidgetCodeComponent } from './widget-code/widget-code.component';
 import { LoggerService } from './services/logger.service';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoggerService } from './services/logger.service';
     BrowserModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    HttpClientModule
   ],
   providers: [
     CoursesService,
