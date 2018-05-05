@@ -10,5 +10,7 @@ export const environment = {
     url: 'http://172.22.20.250:8082/auth',
     realm: 'marconi',
     clientId: 'welearn-fe'
-  }
+  },
+  backendBaseUrl: "http://172.22.20.250:8085",
+  logger: true
 };

@@ -12,6 +12,8 @@ import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
 import { WidgetHtmlComponent } from './widget-html/widget-html.component';
 import { WidgetCodeComponent } from './widget-code/widget-code.component';
+import { LoggerService } from './services/logger.service';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,15 +29,17 @@ import { WidgetCodeComponent } from './widget-code/widget-code.component';
     BrowserModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    HttpClientModule
   ],
   providers: [
-  CoursesService,
-    { 
+    CoursesService,
+    LoggerService,
+    {
       provide: APP_INITIALIZER,
       useFactory: initializer,
       multi: true,
-      deps: [KeycloakService]  
+      deps: [KeycloakService]
     }
   ],
   bootstrap: [AppComponent]
