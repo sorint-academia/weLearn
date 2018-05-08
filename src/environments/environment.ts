@@ -7,10 +7,10 @@ import { KeycloakOnLoad } from 'keycloak-angular';
 export const environment = {
   production: false,
   keycloakConfig: {
-    url: 'http://172.22.20.250:8082/auth',
+    url: 'http://172.22.0.44:8082/auth',
     realm: 'marconi',
     clientId: 'welearn-fe'
   },
-  backendBaseUrl: "http://172.22.20.250:8085",
+  backendBaseUrl: "http://172.22.0.44:8085",
   logger: true
 };
