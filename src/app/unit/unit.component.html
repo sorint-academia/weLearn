@@ -1,5 +1,7 @@
 <div class="container">
-  <div *ngFor="let widget of widgets">
+  <p>{{ unit?.title }}</p>
+  <p>{{ unit?.description }}</p>
+  <div *ngFor="let widget of unit?.widgets">
     <app-widget-html *ngIf="widget.type=='HTML'" [widget]="widget"></app-widget-html>
     <app-widget-code *ngIf="widget.type=='CODE'" [widget]="widget"></app-widget-code>  
   </div>
