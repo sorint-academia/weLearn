@@ -20,13 +20,12 @@ export class DashboardComponent implements OnInit {
     this.coursesService.getCourses().subscribe(courses => { 
       this.courses = courses;
       //Also load detailed info of all courses, like a join
-      //this.courses.forEach((item, index) => {
-      //    this.coursesService.getCourseDetail(item.courseID).subscribe(c => {
-      //      this.courses.findIndex(i => i.courseID == item.courseID)
-      //      //Fill the course element with the getted details 
-      //      this.courses[index] =c;
-      //    });
-      //});
+      this.courses.forEach((item, index) => {
+          this.coursesService.getCourseUnits(item.courseID).subscribe(c => {
+            //Fill the course element with the getted details 
+            this.courses[index].units = c;
+          });
+      });
     });
   }
 }

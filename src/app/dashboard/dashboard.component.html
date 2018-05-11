@@ -33,10 +33,7 @@
 
             <div class="card card-body">
                 <div class="list-group list-group-flush">
-                    <a routerLink="/courses/1/units/1" class="list-group-item list-group-item-action">1. Dapibus ac facilisis in</a> <!-- ngFor let unit of units -->
-                    <a routerLink="/courses/1/units/2" class="list-group-item list-group-item-action">2. Morbi leo risus</a>
-                    <a routerLink="/courses/1/units/3" class="list-group-item list-group-item-action">3. Porta ac consectetur ac</a>
-                    <a routerLink="/courses/1/units/4" class="list-group-item list-group-item-action">4. Vestibulum at eros</a>
+                  <a *ngFor="let unit of course.units" routerLink="{{unit.unitID | removeApi }}" class="list-group-item list-group-item-action">{{ unit.title }}</a>
                 </div>
             </div>
           </div>
