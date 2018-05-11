@@ -20,10 +20,10 @@ describe('coursesService', () => {
     service.getCourses().subscribe(x => expect(x[0].courseID).toBe('/api/courses/b8cf2a9f-a469-4810-8bd6-0e5c78672f36'));
     service.getCourses().subscribe(x => expect(x[0].author).toBe('mbolis'));
     service.getCourses().subscribe(x => expect(x[0].title).toBe('Javascript step by step'));
-    service.getCourses().subscribe(x => expect(x[0].description).toBe('Learn javascript in only two day'));    
-    service.getCourses().subscribe(x => expect(x[1].courseID).toBe('/api/courses/514e272a-1b35-4c28-aa29-5941d9c436d8'));   
-    service.getCourses().subscribe(x => expect(x[1].author).toBe('amreo'));   
+    service.getCourses().subscribe(x => expect(x[0].description).toBe('Learn javascript in only two day'));
+    service.getCourses().subscribe(x => expect(x[1].courseID).toBe('/api/courses/514e272a-1b35-4c28-aa29-5941d9c436d8'));
+    service.getCourses().subscribe(x => expect(x[1].author).toBe('amreo'));
     service.getCourses().subscribe(x => expect(x[1].title).toBe('Java step by step'));
-    service.getCourses().subscribe(x => expect(x[1].description).toBe('Learn java in only two day'));  
+    service.getCourses().subscribe(x => expect(x[1].description).toBe('Learn java in only two day'));
   }));
 });

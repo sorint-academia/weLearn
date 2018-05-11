@@ -6,14 +6,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UnitComponent } from './unit/unit.component';
 import { WidgetComponent } from './widget/widget.component';
-import { CoursesService } from  './services/courses.service';
+import { CoursesService } from './services/courses.service';
 import { Slash2underscorePipe } from './slash2underscore.pipe';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
 import { WidgetHtmlComponent } from './widget-html/widget-html.component';
 import { WidgetCodeComponent } from './widget-code/widget-code.component';
 import { LoggerService } from './services/logger.service';
-import { HttpClientModule }    from '@angular/common/http';
+import { SessionsService } from './services/sessions.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HttpClientModule }    from '@angular/common/http';
       useFactory: initializer,
       multi: true,
       deps: [KeycloakService]
-    }
+    },
+    SessionsService
   ],
   bootstrap: [AppComponent]
 })

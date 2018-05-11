@@ -15,22 +15,22 @@ export class CoursesService {
 
   getCourses(): Observable<Course[]> {
     this.loggerService.log("requesting the list of courses");
-    return this.http.get<Course[]>(environment.backendBaseUrl+"/api/courses");
+    return this.http.get<Course[]>(environment.backendBaseUrl + "/api/courses");
   }
   getCourseDetail(courseID: String): Observable<Course> {
     this.loggerService.log("requesting the course detail: " + courseID);
-    return this.http.get<Course>(environment.backendBaseUrl+courseID);
+    return this.http.get<Course>(environment.backendBaseUrl + courseID);
   }
   getCourseUnits(courseID: String): Observable<Unit[]> {
     this.loggerService.log("requesting the course units: " + courseID);
-    return this.http.get<Unit[]>(environment.backendBaseUrl+courseID+"/units");
+    return this.http.get<Unit[]>(environment.backendBaseUrl + courseID + "/units");
   }
-  getUnit(unitID : String): Observable<Unit> {
+  getUnit(unitID: String): Observable<Unit> {
     this.loggerService.log("requesting the unit: " + unitID);
-    return this.http.get<Unit>(environment.backendBaseUrl+unitID);
+    return this.http.get<Unit>(environment.backendBaseUrl + unitID);
   }
-  getUnitWidgets(unitID : String): Observable<Widget[]> {
+  getUnitWidgets(unitID: String): Observable<Widget[]> {
     this.loggerService.log("requesting the unit widgets: " + unitID);
-    return this.http.get<Widget[]>(environment.backendBaseUrl+unitID+"/widgets");
+    return this.http.get<Widget[]>(environment.backendBaseUrl + unitID + "/widgets");
   }
 }
