@@ -24,6 +24,7 @@ export class UnitComponent implements OnInit {
     console.log(fullPath);
     this.coursesService.getUnit(fullPath).subscribe(unit => {
       this.unit = unit;
+    }
   }
 
 }
