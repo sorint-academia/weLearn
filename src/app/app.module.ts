@@ -16,6 +16,7 @@ import { LoggerService } from './services/logger.service';
 import { SessionsService } from './services/sessions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RemoveApiPipe } from './remove-api.pipe';
+import { UserButtonsComponent } from './user-buttons/user-buttons.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RemoveApiPipe } from './remove-api.pipe';
     Slash2underscorePipe,
     WidgetHtmlComponent,
     WidgetCodeComponent,
-    RemoveApiPipe
+    RemoveApiPipe,
+    UserButtonsComponent
   ],
   imports: [
     BrowserModule,
