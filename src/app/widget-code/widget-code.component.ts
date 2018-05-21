@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import * as Codemirror from 'codemirror';
 import { WidgetComponent } from '../widget/widget.component';
 
 @Component({
@@ -7,6 +8,7 @@ import { WidgetComponent } from '../widget/widget.component';
   styleUrls: ['./widget-code.component.css']
 })
 export class WidgetCodeComponent extends WidgetComponent implements OnInit {
+  @ViewChild('code') code: ElementRef;
 
   constructor() { 
     super();
@@ -15,4 +17,11 @@ export class WidgetCodeComponent extends WidgetComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewInit(){
+    Codemirror.fromTextArea(this.code.nativeElement, {
+      lineNumbers: true,
+      mode: "htmlmixed",
+      value: 'prova'    
+    });
+  }
 }

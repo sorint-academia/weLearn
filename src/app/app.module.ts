@@ -17,6 +17,8 @@ import { SessionsService } from './services/sessions.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RemoveApiPipe } from './remove-api.pipe';
 import { UserButtonsComponent } from './user-buttons/user-buttons.component';
+import { CodemirrorModule } from 'ng2-codemirror';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { UserButtonsComponent } from './user-buttons/user-buttons.component';
     NgbModule.forRoot(),
     AppRoutingModule,
     KeycloakAngularModule,
-    HttpClientModule
+    HttpClientModule,
+    CodemirrorModule
   ],
   providers: [
     CoursesService,
