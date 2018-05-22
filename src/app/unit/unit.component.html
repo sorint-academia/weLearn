@@ -1,7 +1,11 @@
-<div>
-  <p>{{ unit?.title }}</p>
-  <p>{{ unit?.description }}</p>
-  <div *ngFor="let widget of unit?.widgets">
+<div class="container text-center">
+  <div class="row">
+    <button type="button" class="btn btn-primary" [routerLink]="['/dashboard']">Back to Dashboard</button>
+  </div>
+  <h1>{{ unit?.title }}</h1>
+  <p class="italic">{{ unit?.description }}</p>
+  <hr>
+  <div *ngFor="let widget of unit?.widgets" class="text-center col-md-12">
     <app-widget-html *ngIf="widget.type=='HTML'" [widget]="widget"></app-widget-html>
     <app-widget-code *ngIf="widget.type=='CODE'" [widget]="widget"></app-widget-code>  
   </div>

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import * as Codemirror from 'codemirror';
+import { Component, OnInit, Input, ViewChild, ElementRef, forwardRef, Output, AfterViewInit, OnDestroy } from '@angular/core';
+import * as CodeMirror from 'codemirror';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { EventEmitter } from 'events';
 import { WidgetComponent } from '../widget/widget.component';
 
 @Component({
@@ -7,21 +9,26 @@ import { WidgetComponent } from '../widget/widget.component';
   templateUrl: './widget-code.component.html',
   styleUrls: ['./widget-code.component.css']
 })
-export class WidgetCodeComponent extends WidgetComponent implements OnInit {
-  @ViewChild('code') code: ElementRef;
 
-  constructor() { 
+
+export class WidgetCodeComponent extends WidgetComponent implements OnInit {  
+
+  output = 'Output window';
+  
+  constructor(){
     super();
   }
 
-  ngOnInit() {
+  ngOnInit(){
+
   }
 
-  ngAfterViewInit(){
-    Codemirror.fromTextArea(this.code.nativeElement, {
-      lineNumbers: true,
-      mode: "htmlmixed",
-      value: 'prova'    
-    });
+  DoSomething(value: string): void{
+    console.log(value);
+    this.output=value;
+
+    //Richiesta POST verso BE
   }
+
 }
+

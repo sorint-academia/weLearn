@@ -51,6 +51,9 @@ import { CodemirrorModule } from 'ng2-codemirror';
     },
     SessionsService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[
+    WidgetCodeComponent
+  ]
 })
 export class AppModule { }

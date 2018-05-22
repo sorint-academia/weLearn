@@ -1,3 +1,15 @@
-<textarea id="code" #code>
-</textarea>
-
+<div class="row text-center">
+    <div class="container" style="margin-bottom: 25px">
+            <textarea #code>
+            </textarea><br>
+            
+            <!--IMPLEMENTARE CORRETTAMENTE CODEMIRROR-->
+            
+            <input type="button" class="btn btn-primary" value="Run" (click)="DoSomething(code.value)"/>
+    </div>
+    <div class="container">
+        <samp>{{output}}</samp>
+    </div>
+    
+</div>
+<hr>

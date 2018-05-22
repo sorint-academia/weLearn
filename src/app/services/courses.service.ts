@@ -7,6 +7,7 @@ import { of } from 'rxjs/observable/of';
 import { LoggerService } from './logger.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Project } from '../entity/project';
 
 @Injectable()
 export class CoursesService {
@@ -32,5 +33,13 @@ export class CoursesService {
   getUnitWidgets(unitID: String): Observable<Widget[]> {
     this.loggerService.log("requesting the unit widgets: " + unitID);
     return this.http.get<Widget[]>(environment.backendBaseUrl + unitID + "/widgets");
+  }
+  getProjects(): Observable<Project[]> {
+    this.loggerService.log("Requesting projects");
+    return this.http.get<Project[]>(environment.backendBaseUrl + "/projects");
+  }
+  getProject(projectID: String): Observable<Project> {
+    this.loggerService.log("Requesting project with id: " + projectID);
+    return this.http.get<Project>(environment.backendBaseUrl + "/projects/" + projectID);
   }
 }
