@@ -8,5 +8,4 @@ export class Project {
     version: Number;
     executionConfig: ExecutionConfig[];
     files: File[];
-    projects: ProgressProject[];
 }
