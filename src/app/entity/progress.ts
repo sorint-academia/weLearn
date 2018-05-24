@@ -1,11 +1,10 @@
-import { ProgressUnit } from './progress-unit';
+import { ProgressCourse } from './progress-course';
 import { ProgressProject } from './progress-project';
 
 export class Progress {
     studentID: String;
-    courseID: String;
     sessionID: String;
-    units: ProgressUnit[];
+    courses: ProgressCourse[];
     projects: ProgressProject[];
 }
 
