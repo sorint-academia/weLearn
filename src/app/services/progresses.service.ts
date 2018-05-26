@@ -28,9 +28,8 @@ export class ProgressesService {
   }
   getFileOfProgressProjects(progressProjectID: String, filename: String): Observable<String> {
     this.loggerService.log("requesting the file of project of progress");
-    return this.http.get<String>(environment.backendBaseUrl + progressProjectID + "/files/" + filename, {
-      responseType: 'text'
-    });
+    const options = {responseType: 'text' as 'json'};
+    return this.http.get<String>(environment.backendBaseUrl + progressProjectID + "/files/" + filename, options);
   }
   buildProject(progressProjectID: String, executionConfigName: String): Observable<BuildResult> {
     this.loggerService.log("building the project");
