@@ -6,6 +6,6 @@ export class Project {
     name: String;
     previousProjectID: String;
     version: Number;
-    executionConfig: ExecutionConfig[];
+    executionConfigs: ExecutionConfig[];
     files: File[];
 }

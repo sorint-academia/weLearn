@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RemoveApiPipe } from './remove-api.pipe';
 import { UserButtonsComponent } from './user-buttons/user-buttons.component';
 import { CodemirrorModule } from 'ng2-codemirror';
+import { ProgressesService } from './services/progresses.service';
+import { ProjectsService } from './services/projects.service';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { CodemirrorModule } from 'ng2-codemirror';
       multi: true,
       deps: [KeycloakService]
     },
-    SessionsService
+    SessionsService,
+    ProgressesService,
+    ProjectsService
   ],
   bootstrap: [AppComponent],
   exports:[
