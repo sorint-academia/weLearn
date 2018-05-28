@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoggerService } from './logger.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Progress } from '../entity/progress';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Project } from '../entity/project';
 

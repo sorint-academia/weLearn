@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Session } from '../entity/session';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoggerService } from './logger.service';
 import { environment } from '../../environments/environment';

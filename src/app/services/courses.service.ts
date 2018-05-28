@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Course } from '../entity/course';
 import { Unit } from '../entity/unit';
 import { Widget } from '../entity/widget';
-import { of } from 'rxjs/observable/of';
 import { LoggerService } from './logger.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
