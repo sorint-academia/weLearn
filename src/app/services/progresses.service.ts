@@ -46,11 +46,13 @@ export class ProgressesService {
   }
   pullStdout(progressProjectID: String): Observable<Uint8Array> {
     this.loggerService.log("requesting the stdout of the process of project of progress");
-    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stdout");
+    const options = {responseType: 'text' as 'json'};
+    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stdout", options);
   }
   pullStderr(progressProjectID: String): Observable<Uint8Array> {
     this.loggerService.log("requesting the stderr of the process of project of progress");
-    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stderr");
+    const options = {responseType: 'text' as 'json'};
+    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stderr", options);
   }
   pushStdin(progressProjectID: String, content: Uint8Array): Observable<Uint8Array> {
     this.loggerService.log("pushing bytes to the stdin of the process of project of progress");

@@ -9,7 +9,6 @@ import { File } from '../entity/file';
 import { ProgressesService } from '../services/progresses.service';
 import { ExecutionConfig } from '../entity/execution-config';
 //import { SSL_OP_SSLREF2_REUSE_CERT_TYPE_BUG } from 'constants';
-
 @Component({
   selector: 'app-widget-code',
   templateUrl: './widget-code.component.html',
@@ -17,12 +16,13 @@ import { ExecutionConfig } from '../entity/execution-config';
 })
 
 
-export class WidgetCodeComponent extends WidgetComponent implements OnInit {  
+export class WidgetCodeComponent extends WidgetComponent implements OnInit {
 
-  output: String = 'Output window';
+  output: String = "";
   relativeProject: Project;
   progressProjectID: String;
   files: File[];
+  pullerTimer: NodeJS.Timer;
 
   constructor(private projectService: ProjectsService, private progressesService: ProgressesService) {
     super();
@@ -44,13 +44,17 @@ export class WidgetCodeComponent extends WidgetComponent implements OnInit {
 
   BuildAndRun(value: string): void {
     //Put of the file
+    this.output = "";
+    if (this.pullerTimer) {
+      clearInterval(this.pullerTimer);
+    }
     this.progressesService.putFileOfProgressProjects(this.progressProjectID,
       this.getExecutionConfig("RUN").mainFile, value).subscribe(() => {
         this.progressesService.buildProject(this.progressProjectID, "RUN").subscribe(res => {
           this.output = this.output.concat(res.compilationOutput.toString());
           this.progressesService.executeProject(this.progressProjectID, "RUN").subscribe(() => {
             console.log("Executing...");
-            setInterval(() => {
+            this.pullerTimer = setInterval(() => {
               this.progressesService.pullStdout(this.progressProjectID).subscribe(cont => {
                 this.output = this.output.concat(cont.toString());
                 console.log("Pulled stdout");
@@ -59,13 +63,16 @@ export class WidgetCodeComponent extends WidgetComponent implements OnInit {
                 this.output = this.output.concat(cont.toString());
                 console.log("Pulled stderr");
               });
-            }, 100);
+            }, 500);
           });
         });
       });
   }
 
   getFile(): String {
+    if (!this.files) {
+      return "";
+    }
     return this.files[this.files.findIndex(f3 => f3.filename === this.relativeProject.executionConfigs.find(
       ec => ec.name === "RUN"
     ).mainFile)].content;
