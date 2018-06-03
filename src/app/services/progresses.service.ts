@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoggerService } from './logger.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Progress } from '../entity/progress';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { ProgressProject } from '../entity/progress-project';
 import { BuildResult } from '../entity/build-result';
@@ -31,6 +31,11 @@ export class ProgressesService {
     const options = {responseType: 'text' as 'json'};
     return this.http.get<String>(environment.backendBaseUrl + progressProjectID + "/files/" + filename, options);
   }
+  putFileOfProgressProjects(progressProjectID: String, filename: String, content: String): Observable<null> {
+    this.loggerService.log("putting the file of project of progress");
+    const options = {responseType: 'text' as 'json'};
+    return this.http.put<null>(environment.backendBaseUrl + progressProjectID + "/files/" + filename, content, options);
+  }
   buildProject(progressProjectID: String, executionConfigName: String): Observable<BuildResult> {
     this.loggerService.log("building the project");
     return this.http.post<BuildResult>(environment.backendBaseUrl + progressProjectID + "/build/" + executionConfigName, null);
@@ -41,11 +46,13 @@ export class ProgressesService {
   }
   pullStdout(progressProjectID: String): Observable<Uint8Array> {
     this.loggerService.log("requesting the stdout of the process of project of progress");
-    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stdout");
+    const options = {responseType: 'text' as 'json'};
+    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stdout", options);
   }
   pullStderr(progressProjectID: String): Observable<Uint8Array> {
     this.loggerService.log("requesting the stderr of the process of project of progress");
-    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stderr");
+    const options = {responseType: 'text' as 'json'};
+    return this.http.get<Uint8Array>(environment.backendBaseUrl + progressProjectID + "/stderr", options);
   }
   pushStdin(progressProjectID: String, content: Uint8Array): Observable<Uint8Array> {
     this.loggerService.log("pushing bytes to the stdin of the process of project of progress");
