@@ -20,6 +20,6 @@ cd weLearn
 npm install
 npm run build-dev --aot
 docker build -t welearn-fe:latest .
-docker run -dp 8083:8080 --name welearn-fe welearn-fe:latest
+docker run -dp 80:80 --name welearn-fe welearn-fe:latest
 ```
 

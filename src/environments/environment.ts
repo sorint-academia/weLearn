@@ -7,10 +7,10 @@ import { KeycloakOnLoad } from 'keycloak-angular';
 export const environment = {
   production: false,
   keycloakConfig: {
-    url: 'http://172.22.0.44:8082/auth',
-    realm: 'marconi',
+    url: 'http://127.0.0.1:8080/auth', //Set the correct URL address to keycloak
+    realm: 'marconi', //Set the correct realm name
     clientId: 'welearn-fe'
   },
-  backendBaseUrl: "http://172.22.0.44:8085",
+  backendBaseUrl: "http://127.0.0.1:8081", //Set the correct backend base URL without '/' at the end 
   logger: true
 };
