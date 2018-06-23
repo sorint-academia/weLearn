@@ -1,0 +1,13 @@
+@import "~codemirror/lib/codemirror.css";
+.CodeMirror textarea {
+  font-family: monospace;
+}
+
+samp {
+    background: #000;
+    border: 3px groove #ccc;
+    color: #ccc;
+    padding: 5px;
+    width: 100%;
+    display: block;
+}
