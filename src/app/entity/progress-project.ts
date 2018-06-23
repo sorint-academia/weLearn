@@ -1,6 +1,6 @@
 export class ProgressProject {
-    projectID: String;
-    progressProjectID: String;
+    projectID: string;
+    progressProjectID: string;
     version: Number;
     files: File[];
 }

@@ -1,12 +1,12 @@
 import { Course } from "./course";
 
 export class Session {
-    sessionID: String;
-    courseID: String;
-    teacherID: String;
+    sessionID: string;
+    courseID: string;
+    teacherID: string;
     startDate: Date;
     endDate: Date;
-    studentsID: String[];
+    studentsID: string[];
     followAsStudent: Boolean;
     followAsTeacher: Boolean;
     course: Course;

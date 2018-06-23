@@ -1,6 +1,6 @@
 export class File {
-    filename: String;
-    locked: Boolean;
-    hidden: Boolean;
-    content: String;
+    filename: string;
+    locked: boolean;
+    hidden: boolean;
+    content: string;
 }

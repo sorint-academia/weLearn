@@ -1,5 +1,5 @@
 export class ExecutionConfig {
-    name: String;
-    lang: String;
-    mainFile: String;
+    name: string;
+    lang: string;
+    mainFile: string;
 }

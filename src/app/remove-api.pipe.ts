@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RemoveApiPipe implements PipeTransform {
 
-  transform(value: String): String {
+  transform(value: string): string {
     return value.replace("/api", "");
   }
 

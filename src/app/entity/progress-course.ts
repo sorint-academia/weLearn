@@ -1,7 +1,7 @@
 import { ProgressUnit } from './progress-unit';
 
 export class ProgressCourse {
-    courseID: String;
+    courseID: string;
     completed: Boolean;
     units: ProgressUnit[];
 }

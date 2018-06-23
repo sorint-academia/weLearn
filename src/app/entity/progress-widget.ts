@@ -1,4 +1,4 @@
 export class ProgressWidget {
-    widgetID: String;
+    widgetID: string;
     completed: Boolean;
 }
