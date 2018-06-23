@@ -1,7 +1,7 @@
 export class Widget {
-    widgetID: String;
-    type: String;
-    text: String;
-    projectID: String;
-    ref: String;
+    widgetID: string;
+    type: string;
+    text: string;
+    projectID: string;
+    ref: string;
 }

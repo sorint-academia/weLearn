@@ -2,8 +2,8 @@ import { ProgressCourse } from './progress-course';
 import { ProgressProject } from './progress-project';
 
 export class Progress {
-    studentID: String;
-    sessionID: String;
+    studentID: string;
+    sessionID: string;
     courses: ProgressCourse[];
     projects: ProgressProject[];
 }

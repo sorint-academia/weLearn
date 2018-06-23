@@ -16,7 +16,7 @@ export class ProjectsService {
     return this.http.get<Project[]>(environment.backendBaseUrl + "/api/projects");
   }
 
-  getProject(projectID: String): Observable<Project> {
+  getProject(projectID: string): Observable<Project> {
     this.loggerService.log("requesting the project");
     return this.http.get<Project>(environment.backendBaseUrl + projectID);
   }

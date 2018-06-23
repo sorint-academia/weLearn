@@ -1,16 +1,11 @@
-<div class="row text-center">
+<div class="row">
     <div class="container" style="margin-bottom: 25px">
-            <textarea #code>
-                {{ getFile()}}
-            </textarea><br>
-            
-            <!--IMPLEMENTARE CORRETTAMENTE CODEMIRROR-->
-            
-            <input type="button" class="btn btn-primary" value="Run" (click)="BuildAndRun(code.value)"/>
+            <textarea #code></textarea><br>
+            <input type="button" class="btn btn-primary" value="Run" (click)="BuildAndRun()" />
     </div>
     <div class="container">
         <samp>{{output}}</samp>
     </div>
-    
+
 </div>
 <hr>

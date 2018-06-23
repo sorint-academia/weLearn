@@ -22,13 +22,13 @@ export class SessionsService {
     this.loggerService.log("requesting the list of sessions as teacher");
     return this.http.get<Session[]>(environment.backendBaseUrl + "/api/sessions/asTeacher");
   }
-  getSession(id: String): Observable<Session[]> {
+  getSession(id: string): Observable<Session[]> {
     this.loggerService.log("requesting the session: " + id);
     return this.http.get<Session[]>(environment.backendBaseUrl + id);
   }
-  getSessionStudentsOk(id: String): Observable<String[]> {
+  getSessionStudentsOk(id: string): Observable<string[]> {
     this.loggerService.log("requesting the students of the session: " + id);
-    return this.http.get<String[]>(environment.backendBaseUrl + id + "/students");
+    return this.http.get<string[]>(environment.backendBaseUrl + id + "/students");
   }
 
 }
